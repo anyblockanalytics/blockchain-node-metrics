@@ -74,9 +74,9 @@ app.get('/influxdb', async (req, res) => {
             config.meta.measurement,
             config.meta.tagString ? `,${config.meta.tagString}` : '',
             ' ',
-            `peer-count=${parseInt(result[0].result, 16)}`,
+            `peer-count=${parseInt(result[0].result, 16)}i`,
             ',',
-            `block-height=${parseInt(result[1].result, 16)}`,
+            `block-height=${parseInt(result[1].result, 16)}i`,
             ' ',
             Date.now() * 1000000 // Fake nanoseconds. This resolution is not needed for our usecase.
         ].join('')
